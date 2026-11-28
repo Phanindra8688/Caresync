@@ -70,17 +70,7 @@
 									"referenceName": "Source_to_sliver_inner",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true,
-								"parameters": {
-									"table_id": {
-										"value": "@item().table_id",
-										"type": "Expression"
-									},
-									"adf_run_id": {
-										"value": "@pipeline().parameters.adf_run_id",
-										"type": "Expression"
-									}
-								}
+								"waitOnCompletion": true
 							}
 						},
 						{
