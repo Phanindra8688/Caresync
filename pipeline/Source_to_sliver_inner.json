@@ -226,7 +226,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "update ctrl.audit_log set status='Success', end_time=SYSUTCDATETIME(), records_written=@{activity('bronze_to_silver').output.runOutput} WHERE adf_run_id = '@{pipeline().parameters.adf_run_id}' AND\ntable_id = @{activity('Getting_table_config').output.firstRow.table_id}",
+								"value": "update ctrl.audit_log set status='Success', end_time=SYSUTCDATETIME(), records_written=@{activity('bronze_to_silver').output.runOutput} WHERE adf_run_id = pipeline().parameters.adf_run_id AND\ntable_id = activity('Getting_table_config').output.firstRow.table_id",
 								"type": "Expression"
 							}
 						}
@@ -236,13 +236,13 @@
 			}
 		],
 		"parameters": {
-			"table_id": {
-				"type": "String",
-				"defaultValue": "1"
-			},
 			"adf_run_id": {
 				"type": "String",
 				"defaultValue": "a3"
+			},
+			"table_id": {
+				"type": "string",
+				"defaultValue": "1"
 			}
 		},
 		"variables": {
