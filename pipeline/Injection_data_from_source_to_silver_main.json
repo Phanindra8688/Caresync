@@ -73,7 +73,7 @@
 								"waitOnCompletion": true,
 								"parameters": {
 									"adf_run_id": {
-										"value": "@item().adf_run_id",
+										"value": "@pipeline().parameters.adf_run_id",
 										"type": "Expression"
 									},
 									"table_id": {
@@ -159,7 +159,7 @@
 			},
 			"adf_run_id": {
 				"type": "string",
-				"defaultValue": "a3"
+				"defaultValue": "a2"
 			}
 		},
 		"variables": {
