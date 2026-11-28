@@ -70,7 +70,17 @@
 									"referenceName": "Source_to_sliver_inner",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"adf_run_id": {
+										"value": "@item().adf_run_id",
+										"type": "Expression"
+									},
+									"table_id": {
+										"value": "@item().table_id",
+										"type": "Expression"
+									}
+								}
 							}
 						},
 						{
@@ -148,8 +158,7 @@
 				"defaultValue": "neon_postgres"
 			},
 			"adf_run_id": {
-				"type": "string",
-				"defaultValue": "a3"
+				"type": "string"
 			}
 		},
 		"variables": {
